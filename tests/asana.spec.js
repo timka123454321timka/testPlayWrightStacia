@@ -50,3 +50,12 @@ test('Test 5', async ({ page }) => {
       await expect(page.getByText('Password reset').first()).toBeVisible();
       await expect(page.getByText('Waiting')).toBeVisible();
       });
+
+      test('Test 6', async ({ page }) => {
+        await page.getByLabel('Work Requests, Project').click();
+        await expect(page.getByText('Low effort').first()).toBeVisible();
+        await expect(page.getByText('New hardware').first()).toBeVisible();
+        await expect(page.getByText('High Priority').first()).toBeVisible();
+        await expect(page.getByText('Done')).toBeVisible();
+        });
+
