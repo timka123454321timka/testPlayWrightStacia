@@ -17,15 +17,15 @@ test('Test 1', async ({ page }) => {
   await page.getByLabel('Cross-functional project plan').click();
   await expect(page.getByText('Non-Priority')).toBeVisible();
   await expect(page.getByText('On track').nth(1)).toBeVisible();
-  });
 
+});
 
 test('Test 2', async ({ page }) => {
   await page.getByLabel('Cross-functional project plan').click();
   await expect(page.getByText('Medium')).toBeVisible();
   await expect(page.getByText('At risk').first()).toBeVisible();
- 
-  });
+  
+});
 
 test('Test 3', async ({ page }) => {
     await page.getByLabel('Cross-functional project plan').click();
@@ -33,7 +33,7 @@ test('Test 3', async ({ page }) => {
     //  does not have off track
     //await expect(page.getByText('Off track')).toBeVisible();
 
-    });
+});
 
 test('Test 4', async ({ page }) => {
     await page.getByLabel('Work Requests, Project').click();
@@ -41,7 +41,7 @@ test('Test 4', async ({ page }) => {
     await expect(page.getByText('Low effort').first()).toBeVisible();
     await expect(page.getByText('New hardware').first()).toBeVisible();
     await expect(page.getByText('Not Started')).toBeVisible();
-    });
+});
 
 test('Test 5', async ({ page }) => {
       await page.getByLabel('Work Requests, Project').click();
@@ -49,13 +49,13 @@ test('Test 5', async ({ page }) => {
       await expect(page.getByText('Low priority').first()).toBeVisible();
       await expect(page.getByText('Password reset').first()).toBeVisible();
       await expect(page.getByText('Waiting')).toBeVisible();
-      });
+});
 
-      test('Test 6', async ({ page }) => {
-        await page.getByLabel('Work Requests, Project').click();
-        await expect(page.getByText('Low effort').first()).toBeVisible();
-        await expect(page.getByText('New hardware').first()).toBeVisible();
-        await expect(page.getByText('High Priority').first()).toBeVisible();
-        await expect(page.getByText('Done')).toBeVisible();
-        });
+test('Test 6', async ({ page }) => {
+      await page.getByLabel('Work Requests, Project').click();
+      await expect(page.getByText('Low effort').first()).toBeVisible();
+      await expect(page.getByText('New hardware').first()).toBeVisible();
+      await expect(page.getByText('High Priority').first()).toBeVisible();
+      await expect(page.getByText('Done')).toBeVisible();
+});
 
