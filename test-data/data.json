@@ -15,8 +15,12 @@
         "XPATH" :
                 {       
                         "Completed_for_Daniele_V" : "//div[@class='CommentOnlyBoardColumn-header']//h3[(text()='Completed')]//following::span[text()='[Example] New keycard for Daniela V']",
-
-                }
+                         "Progress_Password_Not_Working" : "//div[@class='CommentOnlyBoardColumn-header']//h3[contains(text(),'In')][contains(text(),'Progress')]//following::span[text()='[Example] Password not working']",
+                         "New_Requests_Laptop_for_new_hire":"//div[@class='CommentOnlyBoardColumn-header']//h3[contains(text(),'New')][contains(text(),'Requests')]//following::span[text()='[Example] Laptop setup for new hire']",
+                         "To_do_Share_timeline_with_teammates": "//div[@class='CommentOnlyBoardColumn-header']//h3[contains(text(),'To')]//following::span[text()='Share timeline with teammates']",
+                         "To_do_Schedule_Kick_of_Meeting":"//div[@class='CommentOnlyBoardColumn-header']//h3[contains(text(),'To')]//following::span[contains(text(),'Schedule kickoff meeting']",
+                         "To_do_Draft_project_brief":"//div[@class='CommentOnlyBoardColumn-header']//h3[contains(text(),'To')][contains(text(),'do')]//following::span[text()='Draft project brief']"
+                        }
 ,
         "tags" : 
         
@@ -41,9 +45,9 @@
         "classChildText" : 
         
                 {
-
-                        " Daniela V": "[Example] New keycard for Daniela V']"
                         
+                        " Daniela V": "[Example] New keycard for Daniela V']"
+
 
 
                 }
