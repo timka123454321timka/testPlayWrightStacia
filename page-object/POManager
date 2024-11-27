@@ -1,0 +1,19 @@
+/*
+
+import { HomePage } from "./HomePage";
+import { LoginPage } from "./LoginPage";
+
+class POManager {
+
+constructor(){
+
+    this.loginPage = new LoginPage(page);
+    this.homePage = new HomePage(page);
+
+
+}
+
+
+} module.exports={POManager};
+
+*/

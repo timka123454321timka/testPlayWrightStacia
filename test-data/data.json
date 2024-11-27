@@ -1,7 +1,51 @@
 {  
         "url": "https://app.asana.com/-/login",
         "userName":"ben+pose@workwithloop.com",
-        "password":"Password123"
+        "password":"Password123",
 
+        "section" : 
+                {
+                        "Cross_Functional" :"Cross-functional project plan",
+                        "Work_Requests": "Work Requests, Project"
+                }
+                ,
+
+
+
+        "XPATH" :
+                {       
+                        "Completed_for_Daniele_V" : "//div[@class='CommentOnlyBoardColumn-header']//h3[(text()='Completed')]//following::span[text()='[Example] New keycard for Daniela V']",
+
+                }
+,
+        "tags" : 
+        
+                {
+                        "NonPriority" : "Non-Priority",
+                        "On_Track": "On track",
+                        "Medium" :"Medium",
+                        "At_risk": "At Risk",
+                        "High": "High",
+                        "Medium_priority": "Medium priority",
+                        "Low_effort" : "Low effort",
+                        "New_hardware" : "New hardware",
+                        "Not_Started": "Not Started",
+                        "Low_priority": "Low priority",
+                        "Password_reset" : "Password Reset",
+                        "Waiting": "Waiting",
+                        "High_Priority" : "HighvPriority",
+                        "Done" : "Done"
+
+                }
+,
+        "classChildText" : 
+        
+                {
+
+                        " Daniela V": "[Example] New keycard for Daniela V']"
+                        
+
+
+                }
 
 }
