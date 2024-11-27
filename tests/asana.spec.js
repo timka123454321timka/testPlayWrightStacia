@@ -2,6 +2,7 @@
 const { test, expect } = require('@playwright/test');
 const json = JSON.parse(JSON.stringify(require("../test-data//data.json")));
 const {LoginPage} = require('../page-object/LoginPage');
+const {HomePage} = require('../page-object/HomePage');
 
 
 test.beforeEach('Before each', async ({ page }) => {
@@ -10,8 +11,9 @@ test.beforeEach('Before each', async ({ page }) => {
 });
 
 test('Test 1', async ({ page }) => {
- // await page.getByLabel('Cross-functional project plan').click();
-  await page.locator("//a[@aria-label='Cross-functional project plan, Project, Project']").click();
+  const homePage =  new HomePage(page);
+  homePage.Verification();
+ /// await page.locator("//a[@aria-label='Cross-functional project plan, Project, Project']").click();
   await expect(page.locator("//div[@class='CommentOnlyBoardColumn-header']//h3[contains(text(),'To')][contains(text(),'do')]//following::span[text()='Draft project brief']")).toBeVisible();
   await expect(page.getByText('Non-Priority')).toBeVisible();
   await expect(page.getByText('On track').nth(1)).toBeVisible();
