@@ -1,24 +1,20 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
-const json = JSON.parse(JSON.stringify(require("../test-data//data.json")))
+const json = JSON.parse(JSON.stringify(require("../test-data//data.json")));
+const {LoginPage} = require('../page-object/LoginPage');
 
 
-test.beforeEach('Test Case 1', async ({ page }) => {
-  await page.goto(json.url);
-
-  await page.locator("input[autocomplete='username']").fill(json.userName);
-  await page.locator(".ButtonThemeablePresentation--isEnabled.ButtonThemeablePresentation.ButtonThemeablePresentation--large.LoginButton.LoginEmailForm-continueButton.Stack.Stack--align-center.Stack--direction-row.Stack--display-inline.Stack--justify-center").click();
-  await page.locator("input[class='TextInputBase SizedTextInput SizedTextInput--medium TextInput TextInput--medium TextInputIconContainer-input LoginPasswordForm-passwordInput']").fill('Password123');
-  await page.locator(".ButtonThemeablePresentation--isEnabled.ButtonThemeablePresentation.ButtonThemeablePresentation--large.LoginButton.LoginPasswordForm-loginButton.Stack.Stack--align-center.Stack--direction-row.Stack--display-inline.Stack--justify-center").click();
-  
+test.beforeEach('Before each', async ({ page }) => {
+  const loginPage =  new LoginPage(page);
+  loginPage.LoginInit(json.url, json.userName, json.password);
 });
 
 test('Test 1', async ({ page }) => {
-  await page.getByLabel('Cross-functional project plan').click();
+ // await page.getByLabel('Cross-functional project plan').click();
+  await page.locator("//a[@aria-label='Cross-functional project plan, Project, Project']").click();
   await expect(page.locator("//div[@class='CommentOnlyBoardColumn-header']//h3[contains(text(),'To')][contains(text(),'do')]//following::span[text()='Draft project brief']")).toBeVisible();
   await expect(page.getByText('Non-Priority')).toBeVisible();
   await expect(page.getByText('On track').nth(1)).toBeVisible();
-
 });
 
 test('Test 2', async ({ page }) => {
